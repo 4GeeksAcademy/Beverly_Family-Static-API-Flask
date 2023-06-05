@@ -1,13 +1,4 @@
-
-"""
-update this file to implement the following already declared methods:
-- add_member: Should add a member to the self._members list
-- delete_member: Should delete a member from the self._members list
-- update_member: Should update a member from the self._members list
-- get_member: Should return a member from the self._members list
-"""
 from random import randint
-
 
 class FamilyStructure:
     def __init__(self, last_name):
@@ -39,6 +30,12 @@ class FamilyStructure:
     def _generateId(self):
         return randint(0, 99999999)
 
+    def get_member(self, member_id):
+        for member in self._members:
+            if member["id"] == id:
+                return member
+        return None
+
     def add_member(self, member):
         member['id'] = self._generateId()
         member['last_name'] = self.last_name
@@ -55,21 +52,7 @@ class FamilyStructure:
             if member["id"] == member_id:
                 member.update(member_data)
                 break
-
-    # def update_member(self, id, member):
-    #     for i, m in enumerate(self._members):
-    #         if m['id'] == id:
-    #             member['id'] = id
-    #             member['last_name'] = self.last_name
-    #             self._members[i] = member
-    #             break
-
-
-    def get_member(self, member_id):
-        for member in self._members:
-            if member["id"] == id:
-                return member
-        return None
+  
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):

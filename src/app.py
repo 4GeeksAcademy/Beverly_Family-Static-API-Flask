@@ -39,7 +39,7 @@ def get_all_members():
         "hello": "world",
         "family": members
     }
-        return jsonify(response_body), 200
+    return jsonify(response_body), 200
 
 @app.route('/member/<int:member_id>', methods=['GET'])
 def get_member(member_id):
